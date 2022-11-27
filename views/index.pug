@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Home
+  link(rel='stylesheet' href='/css/style.css')
+center
+  h1 Home Page
+.hedimg
+  img(src='/image/Shopping-online.jpg' alt='' style='height: 15em; width: 100%')
+center
+  ul.nav
+    li.nav-item
+      a.nav-link(href='posts') Home
+    li.nav-item
+      a.nav-link(href='/posts/addpost') Add Post
+.mainBlog
+  h1 My Blog
+  each i in posts
+    .Mypost
+        h1 #{i.titre}
+        p date de création : #{i.createdAt}
+        p date de Modification : #{i.updatedAt}
+        h3 #{i.auteur}
+        h5 Resume : #{i.resume}
+        p Content : #{i.content}
+        a(href="/posts/getPost/"+i.id style="color:blue") learn more
+        <br>
+        span
+          a(href="/posts/deletePost/"+i.id) supp
+        span
+          a(href="/posts/editPost/"+i.id) edit
